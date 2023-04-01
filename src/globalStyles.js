@@ -14,6 +14,7 @@ body{
     padding: 0;
     overflow-x: hidden;
     font-family:"'Nunito Sans', sans-serif";
+    font-size: 14px;
 }
 
 `
