@@ -43,7 +43,6 @@ const Header = ({handleTheme}) => {
     <HeaderContainer>
         <h1>Where in the world?</h1>
         <ThemeButton onClick={handleTheme}><ModeIcon>{modeIcon}</ModeIcon> Dark Mode</ThemeButton>
-        
     </HeaderContainer>
   )
 }
