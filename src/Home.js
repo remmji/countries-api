@@ -11,12 +11,11 @@ height:100vh;
 const Home = () => {
   return (
 
-  <>
-    <Header/>
+  
     <MainContainer>
       Home
     </MainContainer>
-  </>
+  
 
   )
 }
