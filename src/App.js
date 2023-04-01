@@ -26,7 +26,7 @@ const handleTheme = () =>{
     <GlobalStyle/>
   
     <ThemeProvider theme={theme}>
-      <Header handleTheme={handleTheme} theme={theme} />
+      <Header handleTheme={handleTheme} />
       <Routes>
           <Route path="/" element={ <Home/> } />
       </Routes>

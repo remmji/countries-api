@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 
 const HeaderContainer = styled.header`
-background: ${props=>props.theme.background};
+background: ${props=>props.theme.elementColor};
 height: 12vh;
 color: ${props => props.theme.text};
 display: flex;
@@ -18,7 +18,7 @@ h1{
 `
 const ThemeButton = styled.button`
 color: ${props => props.theme.text};
-background: ${props=>props.theme.background};
+background: ${props=>props.theme.elementColor};
 border: none;
 outline: none;
 font-size: 17px;
