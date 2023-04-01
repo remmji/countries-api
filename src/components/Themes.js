@@ -5,7 +5,7 @@ export const lightTheme = {
   background: 'hsl(0, 0%, 98%)',
   white: 'hsl(0, 0%, 100%)',
   darkBlue: 'hsl(209, 23%, 22%)',
-  fontFamiy: '"Nunito Sans", sans-serif',
+  fontFamily: '"Nunito Sans", sans-serif',
 }
 
 export const darkTheme = {
@@ -15,5 +15,5 @@ export const darkTheme = {
   background: 'hsl(0, 0%, 10%)',
   white: 'hsl(0, 0%, 100%)',
   darkBlue: 'hsl(209, 23%, 22%)',
-  fontFamiy: '"Nunito Sans", sans-serif',
+  fontFamily: '"Nunito Sans", sans-serif',
 }
