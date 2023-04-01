@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const HeaderContainer = styled.header`
 background: ${props=>props.theme.elementColor};
-height: 12vh;
+height: 9vh;
 color: ${props => props.theme.text};
 display: flex;
 align-items: center;
@@ -13,6 +13,7 @@ border-bottom: 1px solid lightgrey;
 
 h1{
     padding-inline: 5vw;
+    font-size: 1.7em;
 }
 
 `
@@ -23,7 +24,7 @@ border: none;
 outline: none;
 font-size: 17px;
 font-weight: 800;
-padding-inline: 2.5vw;
+padding-inline: 5vw;
 cursor: pointer;
 `
 const ModeIcon = styled.svg`
