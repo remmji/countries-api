@@ -13,20 +13,29 @@ const SearchFunctionalityContainer = styled.div`
 display: flex;
 justify-content: space-between;
 `
-
+const CardWrapper = styled.div`
+padding-inline: 5vw;
+display: flex;
+justify-content: space-around;
+gap: 6vw;
+flex-wrap: wrap;
+`
 
 const Home = () => {
   const [data, setData] = useState([]);
 
-  const fetchData = async () => {
-    const response = await fetch('./data/datacountry.json');
-    console.log(response);
-    const data = await response.text();
-    console.log(data);
-}
+  useEffect(() => {
+      const fetchData = async () => {
+      const response = await fetch('datacountry.json');
+      const data = await response.json();
+      setData(data);
+    }
+
+    fetchData();
+  }, []);
 
 
-fetchData();
+
 
   return (
 
@@ -36,9 +45,11 @@ fetchData();
       <SearchInput/>
       <DropdownInput/>
       </SearchFunctionalityContainer>
+      <CardWrapper>
       {data.map(country => (
-        <CountryCard key={country.area} data={country} />
+        <CountryCard key={country.numericCode} data={country} />
       ))}
+      </CardWrapper>
     </MainContainer>
   
 
