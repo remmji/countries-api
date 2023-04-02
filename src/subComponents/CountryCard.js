@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {data} from '../data/data.json'
+
 
 
 
@@ -16,12 +16,41 @@ color: ${props => props.theme.text};
 font-weight:600;
 `
 
+const FlagImage = styled.img`
+width: 100%;
+`
+
+const CountryName = styled.h3`
+color: ${props => props.theme.text};
+`
+
+const CountryInfoContainer = styled.div`
+
+`
 
 
-const CountryCard = () => {
+const CountryCard = ({props}) => {
+    const {
+    name,
+    flags: { png },
+    population,
+    capital,
+    area,
+    region,
+  } = props
+
   return (
-    <Card>
-
+     <Card key={area}>
+      <FlagImage src={png} alt={name} />
+      <CountryName>{name}</CountryName>
+      <CountryInfoContainer>
+        <h5>Population:</h5>
+        <p>{population}</p>
+        <h5>Region:</h5>
+        <p>{region}</p>
+        <h5>Capital:</h5>
+        <p>{capital}</p>
+      </CountryInfoContainer>
     </Card>
   )
 }
