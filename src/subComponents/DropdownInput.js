@@ -1,0 +1,47 @@
+import React from 'react'
+import styled from 'styled-components'
+
+
+const FormSearch = styled.form`
+padding-inline: 5vw;
+padding-block: 3vw;
+background: ${props => props.theme.body};
+`
+const ContinentDropdown = styled.select`
+  width: 14vw;
+  height: 6vh;
+  border-radius: 0.5rem;
+  outline: none;
+  border: none;
+  background: ${props => props.theme.elementColor};
+  box-shadow: 0px 0px 10px 1px lightgray;
+  padding-inline: 1rem;
+  color: ${props => props.theme.text};
+  font-weight:600;
+
+`
+
+
+
+const handleSubmit = (e) => {
+    e.preventDefault();
+}
+
+const DropdownInput = () => {
+  return (
+    <FormSearch onSubmit={handleSubmit}>
+        <label htmlFor='continent-dropdown'>
+        <ContinentDropdown name='continent' id='continent-dropdown'>
+          <option value=''>Filter by Region</option>
+          <option value='Africa'>Africa</option>
+          <option value='America'>America</option>
+          <option value='Asia'>Asia</option>
+          <option value='Europe'>Europe</option>
+          <option value='Oceania'>Australia/Oceania</option>
+        </ContinentDropdown>
+        </label>
+    </FormSearch>
+  )
+}
+
+export default DropdownInput
