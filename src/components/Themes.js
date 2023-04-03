@@ -9,15 +9,11 @@ export const lightTheme = {
 }
 
 export const darkTheme = {
-  // body: 'hsl(207, 26%, 17%)',
-  body: '#27241D',
-  // text: 'hsl(0, 0%, 100%)',
-  text: '#FAF9F7',
-  // input: 'hsl(0, 0%, 52%)',
-   input: '#E8E6E1',
+  body: 'hsl(207, 26%, 17%)',
+  text: 'hsl(0, 0%, 100%)',
+  input: 'hsl(0, 0%, 52%)',
   background: 'hsl(0, 0%, 10%)',
-  // elementColor: 'hsl(209, 23%, 22%)',
-  elementColor: '#857F72',
+  elementColor: 'hsl(209, 23%, 22%)',
   fontFamily: '"Nunito Sans", sans-serif',
   icon:'#f08daf',
 }
