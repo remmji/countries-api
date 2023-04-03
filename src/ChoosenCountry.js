@@ -35,6 +35,27 @@ box-shadow: 0px 0px 10px 1px lightgray;
 `
 const InfoContainer = styled.div`
 grid-area: text;
+
+h1{
+color: ${props => props.theme.text};
+padding-block: 1.5vw;
+font-size: 2vw;
+}
+`
+const FlextTextContainer = styled.div`
+display: flex;
+flex-direction: column;
+gap:1vw;
+
+h4{
+font-size: 1.1vw;
+color: ${props => props.theme.text};
+}
+
+p{
+display:inline;
+color: ${props => props.theme.input};
+font-size: 1.1vw;
 `
 
 const ChoosenCountry = () => {
@@ -47,7 +68,29 @@ const {state} = useLocation();
         <GridContainer>
             <FlagImg src={state.data.flags.png} alt={state.data.name}/>
             <InfoContainer>
-                sdfsf
+                <h1>{state.data.name}</h1>
+                <FlextTextContainer>
+                    <div>
+                    <h4>Population:</h4>
+                    <p> {state.data.population}</p>
+                    </div>
+                    <div>
+                    <h4>Population:</h4>
+                    <p> {state.data.population}</p>
+                    </div>
+                    <div>
+                    <h4>Population:</h4>
+                    <p> {state.data.population}</p>
+                    </div>
+                    <div>
+                    <h4>Population:</h4>
+                    <p> {state.data.population}</p>
+                    </div>
+                    <div>
+                    <h4>Population:</h4>
+                    <p> {state.data.population}</p>
+                    </div>                 
+                </FlextTextContainer>
             </InfoContainer>
         </GridContainer>
     </CountryWrapper>
