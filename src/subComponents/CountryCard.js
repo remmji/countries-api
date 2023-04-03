@@ -59,8 +59,9 @@ const CountryCard = ({data,searchCountry,continent}) => {
   } = data
 
     const navigate = useNavigate();
+
     const handleClick = () => {
-    navigate(`/country/${name}`);
+    navigate('/country',{state: {data}});
   };
 
     if (searchCountry && !name.toLowerCase().includes(searchCountry.toLowerCase())) {

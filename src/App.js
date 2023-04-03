@@ -30,7 +30,7 @@ const handleTheme = () =>{
       <Header handleTheme={handleTheme} />
       <Routes>
           <Route path="/" element={ <Home /> } />
-          <Route path="/country/:countryId" element={ <ChoosenCountry /> } />
+          <Route path="/country" element={ <ChoosenCountry /> } />
       </Routes>
     </ThemeProvider>
    </>
