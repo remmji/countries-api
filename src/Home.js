@@ -7,7 +7,7 @@ import CountryCard from './subComponents/CountryCard'
 
 const MainContainer = styled.div`
 background: ${props => props.theme.body};
-height:auto;
+min-height:100vh;
 `
 const SearchFunctionalityContainer = styled.div`
 display: flex;
@@ -15,14 +15,14 @@ justify-content: space-between;
 `
 const CardWrapper = styled.div`
 padding-inline: 5vw;
-display: flex;
-justify-content: space-around;
 gap: 6vw;
-flex-wrap: wrap;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
 padding-bottom: 5vw;
 `
 
 const Home = () => {
+
   const [data, setData] = useState([]);
   const [searchCountry,setSearchCountry] = useState('');
   const [continent,setContinent] = useState('');

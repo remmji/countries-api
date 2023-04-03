@@ -6,6 +6,7 @@ import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./components/Themes";
 import { useState } from "react";
 import Header from "./components/Header";
+import ChoosenCountry from "./ChoosenCountry";
 
 function App() {
 
@@ -28,7 +29,8 @@ const handleTheme = () =>{
     <ThemeProvider theme={theme}>
       <Header handleTheme={handleTheme} />
       <Routes>
-          <Route path="/" element={ <Home/> } />
+          <Route path="/" element={ <Home /> } />
+          <Route path="/country/:countryId" element={ <ChoosenCountry /> } />
       </Routes>
     </ThemeProvider>
    </>

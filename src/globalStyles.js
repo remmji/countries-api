@@ -19,6 +19,8 @@ body{
     font-family: 'Nunito Sans', sans-serif;
     font-size: 14px;
 }
-
+a{
+    text-decoration: none;
+}
 `
 export default GlobalStyle;

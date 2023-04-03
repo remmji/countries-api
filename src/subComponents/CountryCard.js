@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-
-
-
+import { useNavigate } from 'react-router-dom';
 
 const Card = styled.div`
 width: 18vw;
@@ -60,16 +58,21 @@ const CountryCard = ({data,searchCountry,continent}) => {
     region,
   } = data
 
+    const navigate = useNavigate();
+    const handleClick = () => {
+    navigate(`/country/${name}`);
+  };
+
     if (searchCountry && !name.toLowerCase().includes(searchCountry.toLowerCase())) {
     return null;
     }
     if (continent && !region.includes(continent)) {
     return null;
     }
-
+    
   return (
-  
-     <Card key={numericCode}>
+    
+     <Card key={numericCode} onClick={handleClick}>
       <FlagImage src={png} alt={name} />
       <CountryName>{name}</CountryName>
       <CountryInfoContainer>
@@ -87,6 +90,7 @@ const CountryCard = ({data,searchCountry,continent}) => {
         </div>
       </CountryInfoContainer>
     </Card>
+    
   )
 }
 
