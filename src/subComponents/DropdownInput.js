@@ -27,14 +27,19 @@ const handleSubmit = (e) => {
     e.preventDefault();
 }
 
-const DropdownInput = () => {
+const DropdownInput = ({setContinent}) => {
+
+   const handleSelectChange = (event) => {
+    setContinent(event.target.value);
+  }
+
   return (
     <FormSearch onSubmit={handleSubmit}>
         <label htmlFor='continent-dropdown'>
-        <ContinentDropdown name='continent' id='continent-dropdown'>
+        <ContinentDropdown name='continent' id='continent-dropdown' onChange={handleSelectChange}>
           <option value=''>Filter by Region</option>
           <option value='Africa'>Africa</option>
-          <option value='America'>America</option>
+          <option value='Americas'>America</option>
           <option value='Asia'>Asia</option>
           <option value='Europe'>Europe</option>
           <option value='Oceania'>Australia/Oceania</option>

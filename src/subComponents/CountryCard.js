@@ -50,7 +50,7 @@ font-size: 1vw;
 `
 
 
-const CountryCard = ({data}) => {
+const CountryCard = ({data,searchCountry,continent}) => {
     const {
     name,
     flags: { png },
@@ -60,7 +60,15 @@ const CountryCard = ({data}) => {
     region,
   } = data
 
+    if (searchCountry && !name.toLowerCase().includes(searchCountry.toLowerCase())) {
+    return null;
+    }
+    if (continent && !region.includes(continent)) {
+    return null;
+    }
+
   return (
+  
      <Card key={numericCode}>
       <FlagImage src={png} alt={name} />
       <CountryName>{name}</CountryName>

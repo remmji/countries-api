@@ -7,7 +7,7 @@ import CountryCard from './subComponents/CountryCard'
 
 const MainContainer = styled.div`
 background: ${props => props.theme.body};
-height:100vh;
+height:auto;
 `
 const SearchFunctionalityContainer = styled.div`
 display: flex;
@@ -19,10 +19,13 @@ display: flex;
 justify-content: space-around;
 gap: 6vw;
 flex-wrap: wrap;
+padding-bottom: 5vw;
 `
 
 const Home = () => {
   const [data, setData] = useState([]);
+  const [searchCountry,setSearchCountry] = useState('');
+  const [continent,setContinent] = useState('');
 
   useEffect(() => {
       const fetchData = async () => {
@@ -42,12 +45,12 @@ const Home = () => {
   
     <MainContainer>
       <SearchFunctionalityContainer>
-      <SearchInput/>
-      <DropdownInput/>
+      <SearchInput searchCountry={searchCountry} setSearchCountry={setSearchCountry}/>
+      <DropdownInput setContinent={setContinent}/>
       </SearchFunctionalityContainer>
       <CardWrapper>
       {data.map(country => (
-        <CountryCard key={country.numericCode} data={country} />
+        <CountryCard key={country.numericCode} data={country} searchCountry={searchCountry} continent={continent} />
       ))}
       </CardWrapper>
     </MainContainer>

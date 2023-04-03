@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 
@@ -26,13 +26,17 @@ const handleSubmit = (e) => {
     e.preventDefault();
 }
 
-const SearchInput = () => {
+const SearchInput = ({searchCountry,setSearchCountry}) => {
+
   return (
     <FormSearch onSubmit={handleSubmit}>
         <label htmlFor='search-country'>
             <FindCountryInput
+            type='search'
             name='search-country' 
-            placeholder='Search country...'/>
+            placeholder='Search country...'
+            value={searchCountry}
+            onChange={(e) => setSearchCountry(e.target.value)}/>
         </label>
     </FormSearch>
   )
