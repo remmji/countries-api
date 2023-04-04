@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
-
 const CountryWrapper = styled.div`
 height: 100vh;
 background: ${props => props.theme.body};
@@ -95,13 +94,22 @@ display:inline;
 color: ${props => props.theme.text};
 font-size: 1.1vw;
 `
+const BackIcon = styled.svg`
+  width: 12px;
+  height: 12px;
+  fill: ${props => props.theme.text};
+`
+
+const backIc =
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+
 const ChoosenCountry = () => {
 const {state} = useLocation();
 
   return (
 
     <CountryWrapper>
-       <Link to='/'><BackButton>Back</BackButton></Link> 
+       <Link to='/'><BackButton><BackIcon>{backIc}</BackIcon> Back</BackButton></Link> 
         <GridContainer>
             <FlagImg src={state.data.flags.png} alt={state.data.name}/>
             <InfoContainer>

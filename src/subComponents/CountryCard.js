@@ -14,6 +14,7 @@ color: ${props => props.theme.text};
 font-weight:600;
 border-radius: 0.5rem;
 cursor: pointer;
+
 `
 
 const FlagImage = styled.img`

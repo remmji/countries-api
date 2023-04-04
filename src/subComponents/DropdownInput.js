@@ -18,7 +18,6 @@ const ContinentDropdown = styled.select`
   padding-inline: 1rem;
   color: ${props => props.theme.text};
   font-weight:600;
-
 `
 
 

@@ -6,7 +6,6 @@ const FormSearch = styled.form`
 padding-inline: 5vw;
 padding-block: 3vw;
 background: ${props => props.theme.body};
-position: relative;
 `
 const FindCountryInput = styled.input`
 width: 30vw;
@@ -19,7 +18,6 @@ padding-inline: 2rem;
 background: ${props => props.theme.elementColor};
 color: ${props => props.theme.text};
 font-weight:600;
-
 `
 
 const handleSubmit = (e) => {
