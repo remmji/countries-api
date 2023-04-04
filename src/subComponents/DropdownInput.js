@@ -14,7 +14,7 @@ const ContinentDropdown = styled.select`
   outline: none;
   border: none;
   background: ${props => props.theme.elementColor};
-  box-shadow: 0px 0px 10px 1px lightgray;
+  box-shadow: 0px 0px 10px 1px grey;
   padding-inline: 1rem;
   color: ${props => props.theme.text};
   font-weight:600;

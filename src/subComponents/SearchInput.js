@@ -14,7 +14,7 @@ height: 6vh;
 border-radius: 0.5rem;
 outline: none;
 border: none;
-box-shadow: 0px 0px 10px 1px lightgray;
+box-shadow: 0px 0px 10px 1px grey;
 padding-inline: 2rem;
 background: ${props => props.theme.elementColor};
 color: ${props => props.theme.text};

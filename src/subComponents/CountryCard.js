@@ -8,7 +8,7 @@ height: 24vw;
 border-radius: 0.5rem;
 outline: none;
 border: none;
-box-shadow: 0px 0px 10px 1px lightgray;
+box-shadow: 0px 0px 10px 1px grey;
 background: ${props => props.theme.elementColor};
 color: ${props => props.theme.text};
 font-weight:600;

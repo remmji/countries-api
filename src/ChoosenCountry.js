@@ -14,7 +14,7 @@ height: 5vh;
 border-radius: 0.5rem;
 outline: none;
 border: none;
-box-shadow: 0px 0px 10px 1px lightgray;
+box-shadow: 0px 0px 10px 1px grey;
 background: ${props => props.theme.elementColor};
 color: ${props => props.theme.text};
 font-weight:600;
@@ -32,7 +32,7 @@ const FlagImg = styled.img`
 grid-area: image;
 width: 40vw;
 height:25vw;
-box-shadow: 0px 0px 10px 1px lightgray;
+box-shadow: 0px 0px 10px 1px grey;
 `
 const InfoContainer = styled.div`
 grid-area: text;
@@ -84,7 +84,7 @@ color: ${props => props.theme.text};
 font-size: 1.1vw;
 `
 const BorderText = styled.div`
-padding-block:5vw;
+padding-top:5vw;
 h4{
 font-size: 1.1vw;
 color: ${props => props.theme.text};
