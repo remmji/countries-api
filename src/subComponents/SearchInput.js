@@ -13,11 +13,15 @@ height: 6vh;
 border-radius: 0.5rem;
 outline: none;
 border: none;
-box-shadow: 0px 0px 10px 1px grey;
+box-shadow: 0px 0px 3px 0px grey;
 padding-inline: 2rem;
 background: ${props => props.theme.elementColor};
 color: ${props => props.theme.text};
 font-weight:600;
+
+@media (max-width: 40em){
+  width:80vw;
+}
 `
 
 const handleSubmit = (e) => {
@@ -32,7 +36,7 @@ const SearchInput = ({searchCountry,setSearchCountry}) => {
             <FindCountryInput
             type='search'
             name='search-country' 
-            placeholder='Search country...'
+            placeholder='Search for a country...'
             value={searchCountry}
             onChange={(e) => setSearchCountry(e.target.value)}/>
         </label>

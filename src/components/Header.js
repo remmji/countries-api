@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import { motion } from 'framer-motion'
 
 const HeaderContainer = styled.header`
 background: ${props=>props.theme.elementColor};
@@ -16,8 +16,13 @@ h1{
     font-size: 1.7em;
 }
 
+@media (max-width: 40em){
+  h1{
+    font-size: 1.2em;
+  } 
+}
 `
-const ThemeButton = styled.button`
+const ThemeButton = styled(motion.button)`
 color: ${props => props.theme.text};
 background: ${props=>props.theme.elementColor};
 border: none;
@@ -26,11 +31,20 @@ font-size: 17px;
 font-weight: 800;
 padding-inline: 5vw;
 cursor: pointer;
+
+@media (max-width: 40em){
+  font-size:3vw;
+}
 `
 const ModeIcon = styled.svg`
   width: 20px;
   height: 18px;
   fill: ${props => props.theme.text};
+
+  @media (max-width: 40em){
+  width:15px;
+  height:15px;
+}
 `
 
 const modeIcon =
@@ -43,7 +57,7 @@ const Header = ({handleTheme}) => {
   return (
     <HeaderContainer>
         <h1>Where in the world?</h1>
-        <ThemeButton onClick={handleTheme}><ModeIcon>{modeIcon}</ModeIcon> Dark Mode</ThemeButton>
+        <ThemeButton onClick={handleTheme} whileHover={{scale:1.1}}><ModeIcon>{modeIcon}</ModeIcon> Dark Mode</ThemeButton>
     </HeaderContainer>
   )
 }

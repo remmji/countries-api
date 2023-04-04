@@ -8,16 +8,20 @@ padding-block: 3vw;
 background: ${props => props.theme.body};
 `
 const ContinentDropdown = styled.select`
-  width: 14vw;
-  height: 6vh;
-  border-radius: 0.5rem;
-  outline: none;
-  border: none;
-  background: ${props => props.theme.elementColor};
-  box-shadow: 0px 0px 10px 1px grey;
-  padding-inline: 1rem;
-  color: ${props => props.theme.text};
-  font-weight:600;
+width: 14vw;
+height: 6vh;
+border-radius: 0.5rem;
+outline: none;
+border: none;
+background: ${props => props.theme.elementColor};
+box-shadow: 0px 0px 3px 0px grey;
+padding-inline: 1rem;
+color: ${props => props.theme.text};
+font-weight:600;
+
+  @media (max-width: 40em){
+  width: 40vw;
+  }
 `
 
 
