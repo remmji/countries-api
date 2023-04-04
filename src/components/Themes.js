@@ -1,6 +1,6 @@
 export const lightTheme = {
   body: 'hsl(0, 0%, 98%)',
-  text: 'hsl(200, 15%, 8%)',
+  text: '#39393F',
   input: 'hsl(0, 0%, 52%)',
   background: 'hsl(0, 0%, 98%)',
   elementColor: 'hsl(0, 0%, 100%)',
@@ -10,8 +10,8 @@ export const lightTheme = {
 
 export const darkTheme = {
   body: 'hsl(207, 26%, 17%)',
-  text: 'hsl(0, 0%, 100%)',
-  input: 'hsl(0, 0%, 52%)',
+  text: 'hsl(0, 0%, 85%)',
+  input: 'hsl(0, 0%, 70%)',
   background: 'hsl(0, 0%, 10%)',
   elementColor: 'hsl(209, 23%, 22%)',
   fontFamily: '"Nunito Sans", sans-serif',

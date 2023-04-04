@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
 
@@ -18,6 +18,7 @@ box-shadow: 0px 0px 10px 1px lightgray;
 background: ${props => props.theme.elementColor};
 color: ${props => props.theme.text};
 font-weight:600;
+cursor: pointer;
 `
 
 const GridContainer = styled.div`
@@ -42,7 +43,14 @@ padding-block: 1.5vw;
 font-size: 2vw;
 }
 `
-const FlextTextContainer = styled.div`
+
+const GridWrapper = styled.div`
+display: grid;
+gap:5vw;
+grid-template-areas: 'one two'
+;`
+const FlextTextContainer1 = styled.div`
+grid-area: one;
 display: flex;
 flex-direction: column;
 gap:1vw;
@@ -54,43 +62,97 @@ color: ${props => props.theme.text};
 
 p{
 display:inline;
-color: ${props => props.theme.input};
+color: ${props => props.theme.text};
 font-size: 1.1vw;
 `
 
+const FlextTextContainer2 = styled.div`
+grid-area: two;
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+gap:1vw;
+
+h4{
+font-size: 1.1vw;
+color: ${props => props.theme.text};
+}
+
+p{
+display:inline;
+color: ${props => props.theme.text};
+font-size: 1.1vw;
+`
+const BorderText = styled.div`
+padding-block:5vw;
+h4{
+font-size: 1.1vw;
+color: ${props => props.theme.text};
+}
+
+p{
+display:inline;
+color: ${props => props.theme.text};
+font-size: 1.1vw;
+`
 const ChoosenCountry = () => {
 const {state} = useLocation();
 
   return (
 
     <CountryWrapper>
-        <BackButton>Back</BackButton>
+       <Link to='/'><BackButton>Back</BackButton></Link> 
         <GridContainer>
             <FlagImg src={state.data.flags.png} alt={state.data.name}/>
             <InfoContainer>
                 <h1>{state.data.name}</h1>
-                <FlextTextContainer>
-                    <div>
-                    <h4>Population:</h4>
-                    <p> {state.data.population}</p>
-                    </div>
-                    <div>
-                    <h4>Population:</h4>
-                    <p> {state.data.population}</p>
-                    </div>
-                    <div>
-                    <h4>Population:</h4>
-                    <p> {state.data.population}</p>
-                    </div>
-                    <div>
-                    <h4>Population:</h4>
-                    <p> {state.data.population}</p>
-                    </div>
-                    <div>
-                    <h4>Population:</h4>
-                    <p> {state.data.population}</p>
-                    </div>                 
-                </FlextTextContainer>
+                <GridWrapper>
+                    <FlextTextContainer1>
+                        <div>
+                        <h4>Native Name:</h4>
+                        <p> {state.data.nativeName}</p>
+                        </div>
+                        <div>
+                        <h4>Population:</h4>
+                        <p> {state.data.population.toLocaleString()}</p>
+                        </div>
+                        <div>
+                        <h4>Region:</h4>
+                        <p> {state.data.region}</p>
+                        </div>
+                        <div>
+                        <h4>Sub Region:</h4>
+                        <p> {state.data.subregion}</p>
+                        </div>
+                        <div>
+                        <h4>Capital:</h4>
+                        <p> {state.data.capital}</p>
+                        </div>                 
+                    </FlextTextContainer1>
+                    <FlextTextContainer2>
+                        <div>
+                        <h4>Top Level Domain:</h4>
+                        <p> {state.data.topLevelDomain}</p>
+                        </div>
+                        <div>
+                        <h4>Currencies:</h4>
+                        <p> {state.data.currencies.map(currency => currency.name).join(', ')}</p>
+                        </div>
+                        <div>
+                        <h4>Languages:</h4>
+                        <p> {state.data.languages.map(language => language.name).join(', ')}</p>
+                        </div>
+                        <div>
+                        <h4>Timezones:</h4>
+                        <p> {state.data.timezones.map(timezone =>timezone).join(', ')}</p>
+                        </div>                 
+                    </FlextTextContainer2>
+                </GridWrapper>
+                <BorderText>
+                        <h4>Borders:</h4>
+                        {state.data.borders?
+                        <p> {state.data.borders.map(borders =>borders).join(', ')}</p>: <p> No borders</p>}
+                </BorderText>
             </InfoContainer>
         </GridContainer>
     </CountryWrapper>
