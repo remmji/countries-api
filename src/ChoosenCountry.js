@@ -61,7 +61,7 @@ gap: 5vw;
   text-align:center;
   }
 `
-const FlagImg = styled.img`
+const FlagImg = styled(motion.img)`
 grid-area: image;
 width: 40vw;
 height:27vw;
@@ -181,7 +181,10 @@ const {state} = useLocation();
     <CountryWrapper>
        <Link to='/'><BackButton><BackIcon>{backIc}</BackIcon> Back</BackButton></Link> 
         <GridContainer>
-            <FlagImg src={state.data.flags.png} alt={state.data.name}/>
+            <FlagImg src={state.data.flags.png} alt={state.data.name}
+            initial={{ scale: 0 }} 
+            animate={{ scale: 1 }} 
+            transition={{ duration: 0.5 }} />
             <InfoContainer>
                 <h1>{state.data.name}</h1>
                 <GridWrapper>
