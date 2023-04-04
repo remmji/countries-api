@@ -10,7 +10,7 @@ min-height: 100vh;
 background: ${props => props.theme.body};
 padding:5vw;
 
-  @media (max-width: 40em){
+  @media (max-width: 50em){
   padding-inline: 8vw;
   padding-block:10vw;
   }
@@ -36,7 +36,7 @@ cursor: pointer;
  &:hover ${BackIcon} {
     transform: translateX(-10px);
   }
-    @media (max-width: 40em){
+    @media (max-width: 50em){
     width:25vw;
     height:2.5rem;
     font-size:12px;
@@ -51,7 +51,7 @@ grid-template-rows: 1fr;
 padding-block: 5vw;
 gap: 5vw;
 
-  @media (max-width: 40em){
+  @media (max-width: 50em){
   grid-template-columns: 1fr;
   grid-template-areas:
   'image'
@@ -67,7 +67,7 @@ width: 40vw;
 height:27vw;
 box-shadow: 0px 0px 3px 0px grey;
 
-@media (max-width:40em){
+@media (max-width: 50em){
   width:70vw;
   height:50vw;
 }
@@ -80,7 +80,7 @@ color: ${props => props.theme.text};
 padding-block: 1.5vw;
 font-size: 2vw;
 
-  @media (max-width: 40em){
+  @media (max-width: 50em){
   font-size:6vw;
   }
 }
@@ -91,7 +91,7 @@ display: grid;
 gap:5vw;
 grid-template-areas: 'one two';
 
-  @media (max-width: 40em){
+  @media (max-width: 50em){
   grid-template-areas: 
   'one'
   'two';
@@ -107,7 +107,7 @@ h4{
 font-size: 1.1vw;
 color: ${props => props.theme.text};
 
-  @media (max-width: 40em){
+  @media (max-width: 50em){
   font-size:3.5vw;
   }
 }
@@ -117,7 +117,7 @@ display:inline;
 color: ${props => props.theme.text};
 font-size: 1.1vw;
 
-  @media (max-width: 40em){
+  @media (max-width: 50em){
   font-size:3.5vw;
   }
 `
@@ -133,7 +133,7 @@ h4{
 font-size: 1.1vw;
 color: ${props => props.theme.text};
 
-  @media (max-width: 40em){
+  @media (max-width: 50em){
   font-size:3.5vw;
   }
 }
@@ -143,7 +143,7 @@ display:inline;
 color: ${props => props.theme.text};
 font-size: 1.1vw;
 
-  @media (max-width: 40em){
+  @media (max-width: 50em){
   font-size:3.5vw;
   }
 `
@@ -154,7 +154,7 @@ h4{
 font-size: 1.1vw;
 color: ${props => props.theme.text};
 
-  @media (max-width: 40em){
+  @media (max-width: 50em){
   font-size:4vw;
   }
 }
@@ -164,7 +164,7 @@ display:inline;
 color: ${props => props.theme.text};
 font-size: 1.1vw;
 
-  @media (max-width: 40em){
+  @media (max-width: 50em){
   font-size:4vw;
   }
 `

@@ -9,11 +9,13 @@ export const lightTheme = {
 }
 
 export const darkTheme = {
-  body: 'hsl(207, 26%, 17%)',
+  // body: 'hsl(207, 26%, 17%)',
+  body: '#202124',
   text: 'hsl(0, 0%, 85%)',
   input: 'hsl(0, 0%, 70%)',
   background: 'hsl(0, 0%, 10%)',
-  elementColor: 'hsl(209, 23%, 22%)',
+  // elementColor: 'hsl(209, 23%, 22%)',
+  elementColor: '#606368',
   fontFamily: '"Nunito Sans", sans-serif',
   icon:'#f08daf',
 }
