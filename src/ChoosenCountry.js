@@ -101,6 +101,10 @@ display: flex;
 flex-direction: column;
 gap:1vw;
 
+@media (max-width: 50em){
+  gap:2vw;
+  }
+
 h4{
 font-size: 1.1vw;
 color: ${props => props.theme.text};
@@ -126,6 +130,10 @@ display: flex;
 flex-direction: column;
 flex-wrap: wrap;
 gap:1vw;
+
+@media (max-width: 50em){
+  gap:2vw;
+  }
 
 h4{
 font-size: 1.1vw;
@@ -153,7 +161,10 @@ align-items:center;
 flex-wrap:wrap;
 
 @media (max-width: 50em){
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr 1fr 1fr;
   gap:2vw;
+  padding-top:10vw;
   }
   
 h4{
