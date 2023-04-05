@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import SearchInput from './subComponents/SearchInput'
 import DropdownInput from './subComponents/DropdownInput'
@@ -33,23 +33,6 @@ padding-bottom: 5vw;
 `
 
 const Home = ({data, searchCountry, setSearchCountry, continent, setContinent}) => {
-
-  // const [data, setData] = useState([]);
-  // const [searchCountry,setSearchCountry] = useState('');
-  // const [continent,setContinent] = useState('');
-
-  // useEffect(() => {
-  //     const fetchData = async () => {
-  //     const response = await fetch('datacountry.json');
-  //     const data = await response.json();
-  //     setData(data);
-  //   }
-
-  //   fetchData();
-  // }, []);
-
-
-
 
   return (
 

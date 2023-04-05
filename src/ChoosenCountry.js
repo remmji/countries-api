@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-
+import BorderButton from './subComponents/BorderButton';
 
 const CountryWrapper = styled.div`
 min-height: 100vh;
@@ -73,7 +73,6 @@ box-shadow: 0px 0px 3px 0px grey;
 `
 const InfoContainer = styled.div`
 grid-area: text;
-
 h1{
 color: ${props => props.theme.text};
 padding-block: 1.5vw;
@@ -149,9 +148,14 @@ font-size: 1.1vw;
 const BorderText = styled.div`
 padding-top:3vw;
 display: flex;
-gap:0.5vw;
+gap:0.7vw;
 align-items:center;
+flex-wrap:wrap;
 
+@media (max-width: 50em){
+  gap:2vw;
+  }
+  
 h4{
 font-size: 1.1vw;
 color: ${props => props.theme.text};
@@ -174,23 +178,7 @@ font-size: 1.1vw;
 const backIc =
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
 
-const BorderButton = styled.button`
-width: 4vw;
-height:2vw;
-outline: none;
-border: none;
-box-shadow: 0px 0px 3px 0px grey;
-background: ${props => props.theme.elementColor};
-color: ${props => props.theme.text};
-cursor: pointer;
-font-size:12px;
 
- @media (max-width: 50em){
-  width:8vw;
-  height:4vw;
-  font-size:2vw;
-  }
-`
 
 const ChoosenCountry = ({borderCountry,setBorderCountry}) => {
 const {state} = useLocation();
@@ -257,7 +245,7 @@ return (
                         {state.data.borders ? (
                         state.data.borders.map((border) => (
                         <Link key={border} to={`/bordercountry/${border}`} onClick={()=>handleClickBorder(border)}>
-                        <BorderButton>{border}</BorderButton>
+                        <BorderButton whileHover={{scale:1.1}}>{border}</BorderButton>
                         </Link>
                         ))
                         ) 
