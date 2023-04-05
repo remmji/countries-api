@@ -10,7 +10,7 @@ export const lightTheme = {
 
 export const darkTheme = {
   // body: 'hsl(207, 26%, 17%)',
-  body: '#202124',
+  body: '#313131',
   text: 'hsl(0, 0%, 85%)',
   input: 'hsl(0, 0%, 70%)',
   background: 'hsl(0, 0%, 10%)',

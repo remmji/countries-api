@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import SearchInput from './subComponents/SearchInput'
 import DropdownInput from './subComponents/DropdownInput'
 import CountryCard from './subComponents/CountryCard'
-import AnimatedPageTransition from './components/AnimatedPageTransition'
+
 
 const MainContainer = styled.div`
 background: ${props => props.theme.body};
@@ -53,7 +53,7 @@ const Home = () => {
 
   return (
 
-  <AnimatedPageTransition>
+
     <MainContainer>
       <SearchFunctionalityContainer>
       <SearchInput searchCountry={searchCountry} setSearchCountry={setSearchCountry}/>
@@ -65,7 +65,7 @@ const Home = () => {
       ))}
       </CardWrapper>
     </MainContainer>
-  </AnimatedPageTransition>
+
 
   )
 }

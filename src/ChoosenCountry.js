@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import AnimatedPageTransition from './components/AnimatedPageTransition';
 
 
 const CountryWrapper = styled.div`
@@ -177,7 +176,7 @@ const ChoosenCountry = () => {
 const {state} = useLocation();
 
   return (
-  <AnimatedPageTransition>
+ 
     <CountryWrapper>
        <Link to='/'><BackButton><BackIcon>{backIc}</BackIcon> Back</BackButton></Link> 
         <GridContainer>
@@ -237,7 +236,7 @@ const {state} = useLocation();
             </InfoContainer>
         </GridContainer>
     </CountryWrapper>
-  </AnimatedPageTransition>
+  
     
   );
 };
