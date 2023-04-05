@@ -32,21 +32,21 @@ padding-bottom: 5vw;
 }
 `
 
-const Home = () => {
+const Home = ({data, searchCountry, setSearchCountry, continent, setContinent}) => {
 
-  const [data, setData] = useState([]);
-  const [searchCountry,setSearchCountry] = useState('');
-  const [continent,setContinent] = useState('');
+  // const [data, setData] = useState([]);
+  // const [searchCountry,setSearchCountry] = useState('');
+  // const [continent,setContinent] = useState('');
 
-  useEffect(() => {
-      const fetchData = async () => {
-      const response = await fetch('datacountry.json');
-      const data = await response.json();
-      setData(data);
-    }
+  // useEffect(() => {
+  //     const fetchData = async () => {
+  //     const response = await fetch('datacountry.json');
+  //     const data = await response.json();
+  //     setData(data);
+  //   }
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
 
 

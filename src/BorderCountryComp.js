@@ -1,8 +1,7 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
-
+import React from 'react'
+import styled from 'styled-components'
+import { motion } from 'framer-motion'
+import {Link} from 'react-router-dom';
 
 const CountryWrapper = styled.div`
 min-height: 100vh;
@@ -155,11 +154,11 @@ align-items:center;
 h4{
 font-size: 1.1vw;
 color: ${props => props.theme.text};
-@media (max-width: 50em){
-font-size:4vw;
+
+  @media (max-width: 50em){
+  font-size:4vw;
   }
 }
-
 p{
 display:inline;
 color: ${props => props.theme.text};
@@ -168,12 +167,12 @@ font-size: 1.1vw;
   @media (max-width: 50em){
   font-size:3.5vw;
   }
-
 `
+
 
 const backIc =
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
-
+    
 const BorderButton = styled.button`
 width: 4vw;
 height:2vw;
@@ -192,70 +191,71 @@ font-size:12px;
   }
 `
 
-const ChoosenCountry = ({borderCountry,setBorderCountry}) => {
-const {state} = useLocation();
+const BorderCountryComp = ({data, borderCountry,setBorderCountry}) => {
 
-const handleClickBorder = (border) => {
-setBorderCountry(border);
-}
+  const country = data.filter((country) => country.alpha3Code === borderCountry);
 
-return (
- 
+  const handleClickBorder = (border) => {
+  setBorderCountry(border);
+  }
+
+
+  return (
     <CountryWrapper>
        <Link to='/'><BackButton><BackIcon>{backIc}</BackIcon> Back</BackButton></Link> 
         <GridContainer>
-            <FlagImg src={state.data.flags.png} alt={state.data.name}
+            <FlagImg src={country[0].flags.png} alt={country[0].name}
             initial={{ scale: 0 }} 
             animate={{ scale: 1 }} 
             transition={{ duration: 0.5 }} />
             <InfoContainer>
-                <h1>{state.data.name}</h1>
+                <h1>{country[0].name}</h1>
                 <GridWrapper>
                     <FlextTextContainer1>
                         <div>
                         <h4>Native Name:</h4>
-                        <p> {state.data.nativeName}</p>
+                        <p> {country[0].nativeName}</p>
                         </div>
                         <div>
                         <h4>Population:</h4>
-                        <p> {state.data.population.toLocaleString()}</p>
+                        <p> {country[0].population.toLocaleString()}</p>
                         </div>
                         <div>
                         <h4>Region:</h4>
-                        <p> {state.data.region}</p>
+                        <p> {country[0].region}</p>
                         </div>
                         <div>
                         <h4>Sub Region:</h4>
-                        <p> {state.data.subregion}</p>
+                        <p> {country[0].subregion}</p>
                         </div>
                         <div>
                         <h4>Capital:</h4>
-                        <p> {state.data.capital}</p>
+                        <p> {country[0].capital}</p>
                         </div>                 
                     </FlextTextContainer1>
                     <FlextTextContainer2>
                         <div>
                         <h4>Top Level Domain:</h4>
-                        <p> {state.data.topLevelDomain}</p>
+                        <p> {country[0].topLevelDomain}</p>
                         </div>
                         <div>
                         <h4>Currencies:</h4>
-                        <p> {state.data.currencies.map(currency => currency.name).join(', ')}</p>
+                        <p> {country[0].currencies.map(currency => currency.name).join(', ')}</p>
                         </div>
                         <div>
                         <h4>Languages:</h4>
-                        <p> {state.data.languages.map(language => language.name).join(', ')}</p>
+                        <p> {country[0].languages.map(language => language.name).join(', ')}</p>
                         </div>
                         <div>
                         <h4>Timezones:</h4>
-                        <p> {state.data.timezones.map(timezone =>timezone).join(', ')}</p>
+                        <p> {country[0].timezones.map(timezone =>timezone).join(', ')}</p>
                         </div>                 
                     </FlextTextContainer2>
                 </GridWrapper>
                 <BorderText>
                         <h4>Borders:</h4>
-                        {state.data.borders ? (
-                        state.data.borders.map((border) => (
+                        {country[0].borders ? (
+                        country[0].borders.map((border) => (
                         <Link key={border} to={`/bordercountry/${border}`} onClick={()=>handleClickBorder(border)}>
                         <BorderButton>{border}</BorderButton>
                         </Link>
@@ -266,14 +266,7 @@ return (
             </InfoContainer>
         </GridContainer>
     </CountryWrapper>
-  
-    
-  );
-};
+  )
+}
 
-
-
-export default ChoosenCountry;
-
-//  {state.data.borders?
-//                         <p> {state.data.borders.map(borders =>borders).join(', ')}</p>
+export default BorderCountryComp

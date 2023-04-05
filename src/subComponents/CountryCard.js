@@ -85,11 +85,10 @@ const CountryCard = ({data,searchCountry,continent}) => {
     region,
   } = data
  
- 
     const navigate = useNavigate();
 
     const handleClick = () => {
-    navigate('/country',{state: {data}});
+    navigate(`/country`,{state: {data}});
    
   };
 
