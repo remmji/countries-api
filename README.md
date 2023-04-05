@@ -8,6 +8,7 @@ Working functionalities:
 •Region Filter 
 •Dark mode / Light mode 
 •Dynamic links on border buttons in detailed country page.
+•Google Maps link for every country
 
 The most challenging part was setting up proper structure so i could send data and set router for mentioned dynamic links. 
 I'm aware it could have been done better perhaps by consolidating detailed page and border country page in one component instead two,
