@@ -179,11 +179,25 @@ font-size: 1.1vw;
 const backIc =
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
     
+const MapPin = styled.svg`
+  width: 20px;
+  height: 18px;
+  fill: ${props => props.theme.text};
+
+  @media (max-width: 40em){
+  width:15px;
+  height:15px;
+}
+`
+
+const pin =
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+
 
 const BorderCountryComp = ({data, borderCountry,setBorderCountry}) => {
 
   const country = data.filter((country) => country.alpha3Code === borderCountry);
-
+  const mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(country[0].name)}`;
   const handleClickBorder = (border) => {
   setBorderCountry(border);
   }
@@ -238,7 +252,11 @@ const BorderCountryComp = ({data, borderCountry,setBorderCountry}) => {
                         <div>
                         <h4>Timezones:</h4>
                         <p> {country[0].timezones.map(timezone =>timezone).join(', ')}</p>
-                        </div>                 
+                        </div>
+                        <div>
+                        <h4>Google Maps:</h4>
+                        <a href={mapLink} target="_blank" rel="noopener noreferrer"><MapPin>{pin}</MapPin></a>
+                        </div>                                  
                     </FlextTextContainer2>
                 </GridWrapper>
                 <BorderText>
