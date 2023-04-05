@@ -190,10 +190,10 @@ const BorderCountryComp = ({data, borderCountry,setBorderCountry}) => {
 
 
   return (
-    <CountryWrapper>
+    <CountryWrapper key={country[0].numericCode}>
        <Link to='/'><BackButton><BackIcon>{backIc}</BackIcon> Back</BackButton></Link> 
         <GridContainer>
-            <FlagImg src={country[0].flags.png} alt={country[0].name}
+            <FlagImg  src={country[0].flags.png} alt={country[0].name}
             initial={{ scale: 0 }} 
             animate={{ scale: 1 }} 
             transition={{ duration: 0.5 }} />

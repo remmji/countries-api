@@ -180,7 +180,7 @@ const backIc =
 
 
 
-const ChoosenCountry = ({borderCountry,setBorderCountry}) => {
+const ChoosenCountry = ({setBorderCountry}) => {
 const {state} = useLocation();
 
 const handleClickBorder = (border) => {
@@ -259,9 +259,4 @@ return (
   );
 };
 
-
-
 export default ChoosenCountry;
-
-//  {state.data.borders?
-//                         <p> {state.data.borders.map(borders =>borders).join(', ')}</p>
