@@ -6,7 +6,6 @@ import { BrowserRouter } from "react-router-dom";
 import '../node_modules/normalize.css/normalize.css'
 
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

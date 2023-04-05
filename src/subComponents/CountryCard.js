@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
+
 const Card = styled(motion.div)`
 width: 18vw;
 height: 24vw;
@@ -83,11 +84,13 @@ const CountryCard = ({data,searchCountry,continent}) => {
     numericCode,
     region,
   } = data
-
+ 
+ 
     const navigate = useNavigate();
 
     const handleClick = () => {
     navigate('/country',{state: {data}});
+   
   };
 
     if (searchCountry && !name.toLowerCase().includes(searchCountry.toLowerCase())) {

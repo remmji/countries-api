@@ -7,10 +7,12 @@ import { darkTheme, lightTheme } from "./components/Themes";
 import { useState } from "react";
 import Header from "./components/Header";
 import ChoosenCountry from "./ChoosenCountry";
+import data from './data/datacountry.json'
+
 
 function App() {
-
 const [theme,setTheme] = useState(lightTheme);
+
 
 const handleTheme = () =>{
   if (theme == lightTheme){
