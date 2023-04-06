@@ -89,11 +89,13 @@ const GridWrapper = styled.div`
 display: grid;
 gap:5vw;
 grid-template-areas: 'one two';
+grid-template-columns: 1fr 1fr;
 
   @media (max-width: 50em){
   grid-template-areas: 
   'one'
   'two';
+  grid-template-columns: 1fr;
   }
 `
 const FlextTextContainer1 = styled.div`
