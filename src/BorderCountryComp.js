@@ -281,7 +281,7 @@ const BorderCountryComp = ({data, borderCountry,setBorderCountry}) => {
                         </Link>
                         ))
                         ) 
-                        : <p> No shared borders</p>}
+                        : <p>None</p>}
                 </BorderText>
             </InfoContainer>
         </GridContainer>
